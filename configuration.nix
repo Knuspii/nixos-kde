@@ -33,10 +33,8 @@
 
   # KDE Plasma
   services.xserver.enable = true;
-
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-
   services.xserver.xkb.layout = "de";
 
   # Audio
@@ -62,27 +60,29 @@
     extraGroups = [ "networkmanager" "wheel" "audio" "video" ];
 
     packages = with pkgs; [
-      # Terminal / Tools
-      git 
-      curl 
+      # Tools
+      nano
+      git
+      curl
       wget
       unzip
       unrar
-      dust 
-      htop 
-      bottom 
+      dust
+      htop
+      bottom
       tree
-      nmap 
-      iperf3 
-      traceroute 
+      nmap
+      iperf3
+      traceroute
       gping
-      xclip 
-      jq 
       fastfetch
       wireguard-tools
 
       # Dev
-      python3 go openjdk25
+      python3
+      go
+      jq 
+      openjdk25
 
       # GUI
       firefox
@@ -93,11 +93,16 @@
       discord
       spotify
       vscode
-      flameshot
-      kitty
       conky
+      steam
     ];
   };
+
+  environment.systemPackages = with pkgs; [
+    nano
+    wget
+  ];
+
 
   # VirtualBox
   virtualisation.virtualbox.host.enable = true;
