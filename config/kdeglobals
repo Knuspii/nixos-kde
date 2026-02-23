@@ -133,17 +133,20 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [General]
-ColorSchemeHash=7b61368c55eaab4075e7b1ae9501f3675b0f830f
+ColorSchemeHash=2c3f86428c11011a7c64ee1e7f47c274d498ff10
+XftHintStyle=hintslight
 XftSubPixel=none
-fixed=Fira Code,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-font=Fira Code,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-menuFont=Fira Code,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-smallestReadableFont=Fira Code Light,8,-1,5,300,0,0,0,0,0,0,0,0,0,0,1,Regular
-toolBarFont=Fira Code,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+fixed=FiraCode Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+font=FiraCode Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+menuFont=FiraCode Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+smallestReadableFont=FiraCode Nerd Font,8,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+toolBarFont=FiraCode Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+
+[Icons]
+Theme=breeze
 
 [KDE]
 LookAndFeelPackage=org.kde.breezedark.desktop
-ShowDeleteCommand=false
 widgetStyle=Windows
 
 [KFileDialog Settings]
@@ -151,9 +154,6 @@ Allow Expansion=false
 Automatically select filename extension=true
 Breadcrumb Navigation=true
 Decoration position=2
-LocationCombo Completionmode=5
-PathCombo Completionmode=5
-Show Bookmarks=false
 Show Full Path=false
 Show Inline Previews=true
 Show Preview=false
@@ -163,18 +163,13 @@ Sort by=Name
 Sort directories first=true
 Sort hidden files last=false
 Sort reversed=false
-Speedbar Width=192
+Speedbar Width=138
 View Style=DetailTree
-
-[PreviewSettings]
-EnableRemoteFolderThumbnail=false
-MaximumRemoteSize=0
-MaximumSize=10485760
 
 [WM]
 activeBackground=39,44,49
 activeBlend=252,252,252
-activeFont=Fira Code SemiBold,12,-1,5,600,0,0,0,0,0,0,0,0,0,0,1,Regular
+activeFont=FiraCode Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 activeForeground=252,252,252
 inactiveBackground=32,36,40
 inactiveBlend=161,169,177

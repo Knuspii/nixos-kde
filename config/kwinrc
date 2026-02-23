@@ -1,5 +1,5 @@
 [Desktops]
-Id_1=c4c0acf1-d566-4a28-bae4-488be55ea107
+Id_1=58f09b0a-380e-4c8f-b35f-583a04ecd769
 Number=1
 Rows=1
 
@@ -11,21 +11,17 @@ Active=true
 Mode=Constant
 
 [Plugins]
+diminactiveEnabled=true
 fallapartEnabled=true
-touchpointsEnabled=true
-translucencyEnabled=true
 
 [Tiling]
 padding=4
 
-[Tiling][50b0f343-0476-5831-aa86-271e9f16661b]
-tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
-
-[Tiling][993f80e6-a602-589a-a5aa-44a1e7d964e3]
+[Tiling][58f09b0a-380e-4c8f-b35f-583a04ecd769][ee6024ae-1b5a-412f-aeb3-f20fe0e527e4]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Xwayland]
-Scale=1.5
+Scale=1.15
 
 [org.kde.kdecoration2]
 library=org.kde.kwin.aurorae
