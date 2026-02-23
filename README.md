@@ -9,7 +9,7 @@
 ## Install NixOS
 Install latest Debian from here: https://nixos.org/download/ \
 Go through the install process. \
-At the software selection part only choose the "system tools" and nothing else.
+Install NixOS without any Desktop.
 
 ## Complete install Script with my custom configs:
 Just type this in your terminal.
