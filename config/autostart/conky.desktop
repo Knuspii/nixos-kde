@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=conky -c ~/.config/conky/conky.config
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=Conky
