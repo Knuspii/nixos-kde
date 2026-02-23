@@ -7,6 +7,7 @@ RightButton;NoModifier=org.kde.contextmenu
 
 [Containments][1]
 ItemGeometries-1670x939=
+ItemGeometries-1920x1080=
 ItemGeometriesHorizontal=
 activityId=a8a84d2e-751b-40b8-8b62-dc2d71ccf9e6
 formfactor=0
@@ -37,10 +38,6 @@ plugin=org.kde.plasma.digitalclock
 [Containments][2][Applets][20][Configuration]
 popupHeight=400
 popupWidth=560
-
-[Containments][2][Applets][21]
-immutability=1
-plugin=org.kde.plasma.showdesktop
 
 [Containments][2][Applets][25]
 immutability=1
@@ -108,14 +105,18 @@ highPrioritySensorIds=["memory/physical/used"]
 lowPrioritySensorIds=["memory/physical/total"]
 totalSensors=["memory/physical/usedPercent"]
 
+[Containments][2][Applets][28]
+immutability=1
+plugin=org.kde.plasma.minimizeall
+
 [Containments][2][Applets][3]
 immutability=1
 plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][3][Configuration]
 PreloadWeight=100
-popupHeight=498
-popupWidth=661
+popupHeight=544
+popupWidth=759
 
 [Containments][2][Applets][3][Configuration][General]
 favoritesPortedToKAstats=true
@@ -129,7 +130,7 @@ immutability=1
 plugin=org.kde.plasma.icontasks
 
 [Containments][2][Applets][5][Configuration][General]
-launchers=applications:org.kde.konsole.desktop
+launchers=applications:org.kde.konsole.desktop,applications:org.kde.dolphin.desktop
 
 [Containments][2][Applets][6]
 immutability=1
@@ -167,7 +168,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][2][Applets][7][Applets][14][Configuration]
-PreloadWeight=55
+PreloadWeight=60
 
 [Containments][2][Applets][7][Applets][14][Configuration][General]
 migrated=true
@@ -192,6 +193,9 @@ plugin=org.kde.plasma.printmanager
 immutability=1
 plugin=org.kde.plasma.networkmanagement
 
+[Containments][2][Applets][7][Applets][19][Configuration]
+PreloadWeight=60
+
 [Containments][2][Applets][7][Applets][22]
 immutability=1
 plugin=org.kde.plasma.battery
@@ -213,7 +217,7 @@ extraItems=org.kde.plasma.manage-inputmethod,org.kde.plasma.clipboard,org.kde.pl
 knownItems=org.kde.plasma.manage-inputmethod,org.kde.plasma.clipboard,org.kde.plasma.cameraindicator,org.kde.plasma.keyboardlayout,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.plasma.devicenotifier,org.kde.plasma.volume,org.kde.kscreen,org.kde.plasma.brightness,org.kde.plasma.keyboardindicator,org.kde.plasma.weather,org.kde.plasma.printmanager,org.kde.plasma.networkmanagement,org.kde.plasma.battery
 
 [Containments][2][General]
-AppletOrder=3;4;5;25;27;26;6;7;20;21
+AppletOrder=3;4;5;25;27;26;6;7;20;28
 
 [ScreenMapping]
 itemsOnDisabledScreens=
