@@ -7,12 +7,12 @@
 # Install NixOS with KDE-Plasma
 
 ## Install NixOS
-Install latest Debian from here: https://nixos.org/download/ \
+Install latest NixOS version from here: https://nixos.org/download/ \
 Go through the install process. \
 Install NixOS without any Desktop.
 
 ## Complete install Script with my custom configs:
 Just type this in your terminal.
 ```
-wget https://raw.githubusercontent.com/Knuspii/nixos-kde/main/nixos-kde-install.sh && sudo bash nixos-kde-install.sh
+curl -O https://raw.githubusercontent.com/Knuspii/nixos-kde/main/nixos-kde-install.sh && sudo bash nixos-kde-install.sh
 ```
