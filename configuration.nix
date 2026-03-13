@@ -77,12 +77,14 @@
       gping
       fastfetch
       wireguard-tools
+      steam-run
 
       # Dev
       python3
       go
-      jq 
+      jq
       openjdk25
+      gcc
 
       # GUI
       firefox
@@ -102,7 +104,6 @@
     nano
     wget
   ];
-
 
   # VirtualBox
   virtualisation.virtualbox.host.enable = true;
