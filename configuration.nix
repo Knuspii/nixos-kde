@@ -33,6 +33,18 @@
   services.fstrim.enable = true;
   services.irqbalance.enable = false;
   environment.variables.__GL_SHADER_DISK_CACHE_SKIP_CLEANUP = "1";
+  nix = {
+    settings.auto-optimise-store = true;
+    optimise = {
+      automatic = true;
+      dates = [ "Sun 10:00" ];
+    };
+    gc = {
+      automatic = true;
+      dates = "Sun 10:00";
+      options = "--delete-older-than 30d";
+    };
+  };
 
   # KDE Plasma
   services.xserver.enable = true;
