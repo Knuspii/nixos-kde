@@ -40,12 +40,12 @@ alias fgrep='fgrep --color=auto'
 alias diff='diff --color=auto'
 alias ip='ip --color=auto'
 alias r='echo Clearing... && sleep 1 && clear && source ~/.bashrc'
-alias dirsize='du -sh -- * .[!.]* 2>/dev/null | sort -h'
-alias errs='journalctl -p 3 -xb'
+alias dirsize='sudo du -sh -- * .[!.]* 2>/dev/null | sort -h'
+alias errs='sudo journalctl -p 3 -xb'
 # NixOS
-alias update='nixos-rebuild switch'
-alias upgrade='nix-channel --update && sudo nixos-rebuild switch'
-alias cleanup='nix-collect-garbage -d'
+alias update='sudo nixos-rebuild switch'
+alias upgrade='sudo nix-channel --update && sudo nixos-rebuild switch'
+alias cleanup='sudo nix-collect-garbage -d'
 
 # Autostart
 if [ -f "$HOME/.starofitrc" ]; then
