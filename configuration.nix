@@ -29,6 +29,11 @@
   i18n.defaultLocale = "de_DE.UTF-8";
   console.keyMap = "de";
 
+  # Optimize
+  services.fstrim.enable = true;
+  services.irqbalance.enable = false;
+  environment.variables.__GL_SHADER_DISK_CACHE_SKIP_CLEANUP = "1";
+
   # KDE Plasma
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
@@ -83,6 +88,7 @@
       iperf3
       traceroute
       gping
+      shellcheck
       fastfetch
       wireguard-tools
       steam-run
@@ -135,18 +141,6 @@
     wget
     curl
   ];
-
-  # Polkit
-  security.polkit.extraConfig = ''
-    polkit.addRule(function(action, subject) {
-      if ((action.id == "com.feralinteractive.GameMode.governor-control" ||
-           action.id == "com.feralinteractive.GameMode.group-control" ||
-           action.id == "com.feralinteractive.GameMode.cpu-control") &&
-          subject.isInGroup("users")) {
-        return polkit.Result.YES;
-      }
-    });
-  '';
 
   # VirtualBox
   virtualisation.virtualbox.host.enable = true;
