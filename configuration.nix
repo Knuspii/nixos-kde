@@ -22,12 +22,10 @@
     enable = true;
     allowedTCPPorts = [ 22 ];
   };
-
   services.openssh.enable = true;
 
   # Timezone / Locale
   time.timeZone = "Europe/Berlin";
-
   i18n.defaultLocale = "de_DE.UTF-8";
   console.keyMap = "de";
 
@@ -37,9 +35,20 @@
   services.desktopManager.plasma6.enable = true;
   services.xserver.xkb.layout = "de";
 
+  # Graphics
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+#  services.xserver.videoDrivers = [ "nvidia" ];
+#  hardware.nvidia = {
+#    modesetting.enable = true;
+#    open = false; 
+#    nvidiaSettings = true;
+#  };
+
   # Audio
   security.rtkit.enable = true;
-
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -58,7 +67,6 @@
     isNormalUser = true;
     description = "User";
     extraGroups = [ "networkmanager" "wheel" "audio" "video" ];
-
     packages = with pkgs; [
       # Tools
       nano
@@ -96,14 +104,49 @@
       spotify
       vscode
       conky
-      steam
+      libnotify
     ];
   };
 
+  # Gaming
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
+  programs.gamemode = {
+      enable = true;
+      enableRenice = true;
+      settings = {
+        general = { 
+          softrealtime = "auto";
+          renice = 10;
+        };
+        custom = {
+          start = "${pkgs.libnotify}/bin/notify-send -a 'Gamemode' 'GameMode started'";
+          end = "${pkgs.libnotify}/bin/notify-send -a 'Gamemode' 'GameMode ended'";
+        };
+      };
+    };
+
+  # Global
   environment.systemPackages = with pkgs; [
     nano
     wget
+    curl
   ];
+
+  # Polkit
+  security.polkit.extraConfig = ''
+    polkit.addRule(function(action, subject) {
+      if ((action.id == "com.feralinteractive.GameMode.governor-control" ||
+           action.id == "com.feralinteractive.GameMode.group-control" ||
+           action.id == "com.feralinteractive.GameMode.cpu-control") &&
+          subject.isInGroup("users")) {
+        return polkit.Result.YES;
+      }
+    });
+  '';
 
   # VirtualBox
   virtualisation.virtualbox.host.enable = true;
