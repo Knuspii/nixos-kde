@@ -31,10 +31,7 @@
 
   # Optimize
   services.fstrim.enable = true;
-  services.irqbalance.enable = false;
-  swapDevices = [
-    { device = "/swapfile"; size = 8192; } # 8GB
-  ];
+  #services.irqbalance.enable = false;
   nix = {
     settings.auto-optimise-store = true;
     optimise = {
@@ -47,6 +44,16 @@
       options = "--delete-older-than 30d";
     };
   };
+  services.journald.extraConfig = ''
+    SystemMaxUse=500M
+    SystemMaxFileSize=50M
+    MaxRetentionSec=7day
+  '';
+
+  # Swap
+  swapDevices = [
+    { device = "/swapfile"; size = 8192; } # 8GB
+  ];
 
   # KDE Plasma
   services.xserver.enable = true;
@@ -104,6 +111,7 @@
       gping
       shellcheck
       fastfetch
+      file
       wireguard-tools
       steam-run
 
@@ -124,6 +132,7 @@
       spotify
       vscode
       prismlauncher
+      itch
       conky
       libnotify
     ];
@@ -156,13 +165,6 @@
     wget
     curl
   ];
-
-  # VirtualBox
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "user" ];
-
-  # Printing
-  services.printing.enable = true;
 
   # Unfree Packages
   nixpkgs.config.allowUnfree = true;
