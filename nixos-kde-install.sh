@@ -23,6 +23,7 @@ sudo -u $USERNAME git clone --depth=1 --branch main https://github.com/knuspii/n
 echo "Copying configuration files..."
 sudo -u $USERNAME cp "$TMP_DIR/bashrc" "/home/$USERNAME/.bashrc"
 sudo -u $USERNAME cp "$TMP_DIR/bash_profile" "/home/$USERNAME/.bash_profile"
+sudo -u $USERNAME cp "$TMP_DIR/backup-config.sh" "/home/$USERNAME/backup-config.sh"
 sudo -u $USERNAME cp -r "$TMP_DIR/config/." "/home/$USERNAME/.config/"
 sudo -u $USERNAME cp -r "$TMP_DIR/local/share/konsole/." "/home/$USERNAME/.local/share/konsole/"
 # NIXOS
