@@ -1,5 +1,5 @@
 # CUSTOM CONFIGURATION Knuspii
-# Help is available in the configuration.nix(5) man page
+# Help is available in the configuration.nix man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
@@ -22,7 +22,7 @@
     enable = true;
     allowedTCPPorts = [ 22 ];
   };
-  services.openssh.enable = true;
+  services.openssh.enable = false;
 
   # Timezone / Locale
   time.timeZone = "Europe/Berlin";
@@ -32,6 +32,9 @@
   # Optimize
   services.fstrim.enable = true;
   services.irqbalance.enable = false;
+  swapDevices = [
+    { device = "/swapfile"; size = 8192; } # 8GB
+  ];
   nix = {
     settings.auto-optimise-store = true;
     optimise = {
@@ -56,12 +59,12 @@
     enable = true;
     enable32Bit = true;
   };
-#  services.xserver.videoDrivers = [ "nvidia" ];
-#  hardware.nvidia = {
-#    modesetting.enable = true;
-#    open = false; 
-#    nvidiaSettings = true;
-#  };
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia = {
+    modesetting.enable = true;
+    open = false; 
+    nvidiaSettings = true;
+  };
 
   # Audio
   security.rtkit.enable = true;
@@ -108,8 +111,8 @@
       python3
       go
       jq
-      openjdk25
       gcc
+      jdk21
 
       # GUI
       firefox
@@ -120,6 +123,7 @@
       discord
       spotify
       vscode
+      prismlauncher
       conky
       libnotify
     ];
