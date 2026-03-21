@@ -88,33 +88,39 @@
     nerd-fonts.fira-code
   ];
 
-  # User
+  # Global packages
+  environment.systemPackages = with pkgs; [
+    # Tools
+    nano
+    git
+    curl
+    wget
+    unzip
+    unrar
+    dust
+    htop
+    bottom
+    tree
+    nmap
+    iperf3
+    traceroute
+    gping
+    shellcheck
+    fastfetch
+    file
+    wireguard-tools
+    steam-run
+    usb-modeswitch
+    usbutils
+    libnotify
+  ];
+
+  # User packages
   users.users.user = {
     isNormalUser = true;
     description = "User";
     extraGroups = [ "networkmanager" "wheel" "audio" "video" ];
     packages = with pkgs; [
-      # Tools
-      nano
-      git
-      curl
-      wget
-      unzip
-      unrar
-      dust
-      htop
-      bottom
-      tree
-      nmap
-      iperf3
-      traceroute
-      gping
-      shellcheck
-      fastfetch
-      file
-      wireguard-tools
-      steam-run
-
       # Dev
       python3
       go
@@ -134,7 +140,6 @@
       prismlauncher
       itch
       conky
-      libnotify
     ];
   };
 
@@ -158,13 +163,6 @@
         };
       };
     };
-
-  # Global
-  environment.systemPackages = with pkgs; [
-    nano
-    wget
-    curl
-  ];
 
   # Unfree Packages
   nixpkgs.config.allowUnfree = true;
