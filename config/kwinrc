@@ -9,15 +9,22 @@ TabletMode=off
 [NightColor]
 Active=true
 Mode=Constant
+NightTemperature=4000
 
 [Plugins]
-diminactiveEnabled=true
 fallapartEnabled=true
+wobblywindowsEnabled=true
 
 [Tiling]
 padding=4
 
+[Tiling][58f09b0a-380e-4c8f-b35f-583a04ecd769][0f4400c6-8267-415d-9ff7-e378e0d44208]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][58f09b0a-380e-4c8f-b35f-583a04ecd769][ee6024ae-1b5a-412f-aeb3-f20fe0e527e4]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][58f09b0a-380e-4c8f-b35f-583a04ecd769][fa3416cd-2141-4aef-baec-154956f4ed63]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Xwayland]

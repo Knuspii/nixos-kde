@@ -113,6 +113,7 @@
     usb-modeswitch
     usbutils
     libnotify
+    alsa-utils
   ];
 
   # User packages

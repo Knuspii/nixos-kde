@@ -47,6 +47,9 @@ alias update='sudo nixos-rebuild switch'
 alias upgrade='sudo nix-channel --update && sudo nixos-rebuild switch'
 alias cleanup='sudo nix-collect-garbage -d'
 
+alias kepfi='~/Desktop/Sachen/Projekte/Programmieren/kepfi/bin/kepfi'
+alias crunchycleaner='~/Desktop/Sachen/Projekte/Programmieren/CrunchyCleaner/bin/crunchycleaner'
+
 # Autostart
 if [ -f "$HOME/.starofitrc" ]; then
     source "$HOME/.starofitrc"
