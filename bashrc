@@ -24,6 +24,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# gopath
+export PATH="$PATH:$(go env GOPATH)/bin"
+
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -34,21 +37,24 @@ fi
 alias ls='ls --color=auto'
 alias ll='ls -lah'
 alias la='ls -A'
+alias lt='tree -L 2 -d'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias diff='diff --color=auto'
 alias ip='ip --color=auto'
 alias r='echo Clearing... && sleep 1 && clear && source ~/.bashrc'
+alias c='clear'
 alias dirsize='sudo du -sh -- * .[!.]* 2>/dev/null | sort -h'
-alias errs='sudo journalctl -p 3 -xb'
+alias errs='sudo journalctl -p 3 -xb -f'
+alias please='sudo $(history -p !!)'
+alias myip='curl ifconfig.me && echo'
 # NixOS
 alias update='sudo nixos-rebuild switch'
 alias upgrade='sudo nix-channel --update && sudo nixos-rebuild switch'
 alias cleanup='sudo nix-collect-garbage -d'
-
-alias kepfi='~/Desktop/Sachen/Projekte/Programmieren/kepfi/bin/kepfi'
-alias crunchycleaner='~/Desktop/Sachen/Projekte/Programmieren/CrunchyCleaner/bin/crunchycleaner'
+alias config='sudo nano /etc/nixos/configuration.nix'
+alias pkgsearch='nix-env -qaP'
 
 # Autostart
 if [ -f "$HOME/.starofitrc" ]; then
