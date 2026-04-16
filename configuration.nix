@@ -31,9 +31,12 @@
 
   # Optimize
   services.fstrim.enable = true;
+  boot.loader.systemd-boot.configurationLimit = 10;
   #services.irqbalance.enable = false;
   nix = {
-    settings.auto-optimise-store = true;
+    settings = {
+      auto-optimise-store = true;
+    };
     optimise = {
       automatic = true;
       dates = [ "Sun 10:00" ];
@@ -49,10 +52,13 @@
     SystemMaxFileSize=50M
     MaxRetentionSec=7day
   '';
+  fileSystems."/" = {
+    options = [ "noatime" ];
+  };
 
   # Swap
   swapDevices = [
-    { device = "/swapfile"; size = 8192; } # 8GB
+    { device = "/swapfile"; size = 4092; } # 4GB
   ];
 
   # KDE Plasma
@@ -103,6 +109,7 @@
     tree
     nmap
     iperf3
+    dig
     traceroute
     gping
     shellcheck
@@ -114,6 +121,8 @@
     usbutils
     libnotify
     alsa-utils
+    vhs
+    ffmpeg
   ];
 
   # User packages
@@ -139,6 +148,7 @@
       spotify
       vscode
       prismlauncher
+      mangohud
       itch
       conky
     ];
