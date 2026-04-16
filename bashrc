@@ -52,7 +52,7 @@ alias myip='curl ifconfig.me && echo'
 # NixOS
 alias update='sudo nixos-rebuild switch'
 alias upgrade='sudo nix-channel --update && sudo nixos-rebuild switch'
-alias cleanup='sudo nix-collect-garbage -d'
+alias cleanup='sudo nix-collect-garbage -d && sudo nix-store --gc'
 alias config='sudo nano /etc/nixos/configuration.nix'
 alias pkgsearch='nix-env -qaP'
 
