@@ -94,6 +94,9 @@
     nerd-fonts.fira-code
   ];
 
+  # AT
+  services.atd.enable = true;
+
   # Global packages
   environment.systemPackages = with pkgs; [
     # Tools
@@ -110,6 +113,8 @@
     nmap
     iperf3
     dig
+    bat
+    gdu
     traceroute
     gping
     shellcheck
@@ -129,7 +134,7 @@
   users.users.user = {
     isNormalUser = true;
     description = "User";
-    extraGroups = [ "networkmanager" "wheel" "audio" "video" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "video" "dialout" ];
     packages = with pkgs; [
       # Dev
       python3
@@ -151,6 +156,7 @@
       mangohud
       itch
       conky
+      easyeffects
     ];
   };
 
